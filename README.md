@@ -1,19 +1,16 @@
 # Wormhole Cross-Chain Lending/Borrowing Example
 
 ## Objective
----
 
 To use the Wormhole protocol to enable cross-chain borrowing and lending.
 
 ## Background
----
 
 Borrow/lend platforms are one of the major DeFi applications, enabling users to permissionlessly deploy excess capital for passive yield generation or borrow against existing capital to capture new opportunities. Currently lending and borrowing pools exist independently across each blockchain, leading to fragmented liquidity and inefficiencies for protocols and potentially less favorable lending/borrowing rates for the protocol users.
 
 Using Wormhole, a borrow/lend platform can become agnostic to the blockchain that users want to post collateral from, borrow from, or lend to.
 
 ## Goals
----
 
 Implement a proof-of-concept, non-production example that allows:
 
@@ -26,20 +23,17 @@ Implement a proof-of-concept, non-production example that allows:
 - Redeem deposit (plus interest) on the chain they deposited on.
 
 ## Non-Goals
----
 
 - Automatically relay messages across chains. The design assumes the borrow is always interested in submitting the message across chains in the depositing or repaying action.
 - Produce a production-level ready protocol.
 
 ## Overview
----
 
 This Wormhole Cross-chain Lending/Borrowing example enables a user to
 - deposit BUSD on BNB as collateral and borrow WETH on Ethereum
 - repay the WETH loan on Ethereum and get their BUSD collateral back on BNB.
 
 ## Detailed Design
----
 
 To initiate a borrow position, the user flow for a user using BUSD on BNB as collateral for WETH on Ethereum is as follows:
 
@@ -120,7 +114,6 @@ address borrowAddress                   // borrow information
 ```
 
 ## Future Work
----
 
 This current proof-of-concept implements the cross-chain borrow capability that utilizes vaults on single chain. There are two main components of future development.
 
