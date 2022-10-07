@@ -28,6 +28,7 @@ contract HubStructs {
     struct DepositMessage {
         // payloadId = 1
         MessageHeader header;
+        uint32 length;
         address[] assetAddresses;
         uint256[] assetAmounts;
     }
@@ -35,6 +36,7 @@ contract HubStructs {
     struct WithdrawMessage {
         // payloadId = 2
         MessageHeader header;
+        uint32 length;
         address[] assetAddresses;
         uint256[] assetAmounts;
     }
@@ -42,6 +44,7 @@ contract HubStructs {
     struct BorrowMessage {
         // payloadId = 3
         MessageHeader header;
+        uint32 length;
         address[] assetAddresses;
         uint256[] assetAmounts;
     }
@@ -49,6 +52,7 @@ contract HubStructs {
     struct RepayMessage {
         // payloadId = 4
         MessageHeader header;
+        uint32 length;
         address[] assetAddresses;
         uint256[] assetAmounts;
     }
@@ -57,8 +61,10 @@ contract HubStructs {
         // payloadId = 5
         MessageHeader header;
         address vault; // address to liquidate
+        uint32 repayLength;
         address[] assetRepayAddresses;
         uint256[] assetRepayAmounts;
+        uint32 receiptLength;
         address[] assetReceiptAddresses;
         uint256[] assetReceiptAmounts;
     }
